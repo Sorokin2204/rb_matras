@@ -1,0 +1,147 @@
+.compare {
+  &__inner {
+    padding: 30px 0px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: auto 240px 240px 240px 240px;
+    grid-template-rows: repeat(9, auto);
+    grid-auto-flow: column;
+    grid-gap: 1px;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    div {
+      &:first-child {
+        border-top-left-radius: 10px;
+      }
+
+      &:nth-child(9) {
+        border-bottom-left-radius: 10px;
+      }
+
+      &:last-child {
+        border-bottom-right-radius: 10px;
+      }
+      &:nth-last-child(9) {
+        border-top-right-radius: 10px;
+      }
+      box-shadow: 0 0 0 1px #dfdfdf;
+    }
+  }
+
+  &__grid-prop {
+    @include medium-15;
+    color: $gray;
+    padding: 10px 20px;
+    &:first-child {
+      padding: 30px 20px;
+    }
+  }
+
+  &__info {
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../img/icon/question-big.svg) no-repeat;
+    background-size: cover;
+    margin-left: 8px;
+    margin-bottom: 2px;
+    width: 12px;
+    height: 12px;
+  }
+
+  &__grid-title {
+    @include medium-15;
+    color: #000;
+    padding: 30px 20px 20px 20px;
+  }
+
+  &__grid-data {
+    @include regular-15;
+    color: $black;
+    padding: 20px;
+  }
+
+  &__grid-list {
+  }
+
+  &__gird-list-item {
+    padding-left: 20px;
+    position: relative;
+    color: #050e0c;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $green;
+    }
+
+    & + & {
+      margin-top: 8px;
+    }
+  }
+
+  &__grid-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    span {
+      @include medium-17;
+      color: #000;
+    }
+  }
+
+  &__grid-btn-cart {
+    padding: 9px 17px;
+    border-radius: 5px;
+  }
+
+  &__grid-btn-remove {
+    align-self: flex-end;
+
+    @include medium-13;
+    color: #afafaf;
+    position: relative;
+    margin-left: auto;
+    padding-left: 25px;
+    text-decoration: underline;
+    // &::before {
+    //   content: '';
+    //   display: block;
+    //   position: absolute;
+    //   bottom: 1px;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 1px;
+    //   background-color: #afafaf;
+    // }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      transform: translateY(-50%);
+      -webkit-mask-image: url(../../img/icon/cross-small.svg);
+      mask-image: url(../../img/icon/cross-small.svg);
+      mask-size: 10px 10px;
+      background-color: #afafaf;
+    }
+    margin-top: 20px;
+  }
+}

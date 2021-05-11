@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__content">
+            <button class="header__menu-btn">
+              <div class="header__menu-btn-burger">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              Меню
+            </button>
+            <a class="header__logo" href="#"
+              ><img src="img/logo.webp" alt=""
+            /></a>
+            <div class="header__info">
+              <img src="img/icon/time.svg" alt="" class="header__info-img" />
+              <div class="header__info-box">
+                <span class="header__info-bold">с 10:00 до 23:00</span>
+                <span class="header__info-text">с понедельника по пятницу</span>
+              </div>
+            </div>
+
+            <div class="header__info">
+              <div class="header__info-box">
+                <span class="header__info-bold">с 10:00 до 17:45</span>
+                <span class="header__info-text">в выходные дни</span>
+              </div>
+            </div>
+
+            <div class="header__info">
+              <img src="img/icon/call.svg" alt="" class="header__info-img" />
+              <div class="header__info-box">
+                <span class="header__info-bold">+7 (963) 693-98-81</span>
+                <a href="tel:+79636939881" class="header__info-link link"
+                  >Заказать звонок</a
+                >
+              </div>
+            </div>
+
+            <div class="header__box">
+              <button class="header__btn-icon" id="search"></button>
+              <button class="header__btn-icon" id="compare"></button>
+              <button class="header__btn-icon" id="favorites"></button>
+              <button class="header__btn-icon" id="cart"></button>
+            </div>
+          </div>
+          <nav class="header__nav nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#" class="nav__link">Контакты</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">О компании</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Партнерская программа</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Гарантия</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Доставка</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Оплата</a>
+              </li>
+              <li class="nav__item"><a href="#" class="nav__link">Акции</a></li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Каталог</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="breadcrumbs__inner">
+          <span class="breadcrumbs__item">Главная</span>
+          <span class="breadcrumbs__item">Каталог</span>
+          <span class="breadcrumbs__item">Сравнение</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="compare">
+      <div class="container">
+        <div class="compare__inner">
+          <h2 class="compare__title title-h2">Сравнение</h2>
+          <div class="compare__grid">
+            <div class="compare__grid-prop">Товар:</div>
+            <div class="compare__grid-prop">
+              Состав: <span class="compare__info"></span>
+            </div>
+            <div class="compare__grid-prop">
+              Жесткость: <span class="compare__info"></span>
+            </div>
+            <div class="compare__grid-prop">Высота:</div>
+            <div class="compare__grid-prop">Класс:</div>
+            <div class="compare__grid-prop">
+              Зоны жесткости: <span class="compare__info"></span>
+            </div>
+            <div class="compare__grid-prop">Чехол:</div>
+            <div class="compare__grid-prop">Наличие:</div>
+            <div class="compare__grid-prop">Стоимость:</div>
+
+            <div class="compare__grid-title">Мазурка стандарт Кормфорт+</div>
+            <div class="compare__grid-data">
+              <ul class="compare__grid-list">
+                <li class="compare__gird-list-item">Natural Foam 2,5см</li>
+                <li class="compare__gird-list-item">Войлок</li>
+                <li class="compare__gird-list-item">
+                  Независимые пружины (255 пр./м2)
+                </li>
+                <li class="compare__gird-list-item">Кокос 3см (Н=21)</li>
+              </ul>
+            </div>
+            <div class="compare__grid-data">Мягкая/Жесткая</div>
+            <div class="compare__grid-data">19 см</div>
+            <div class="compare__grid-data">до 100кг</div>
+            <div class="compare__grid-data">5 зон</div>
+            <div class="compare__grid-data">Несъемный</div>
+            <div class="compare__grid-data">Есть на складе</div>
+            <div class="compare__grid-price">
+              <span> 10 031 р.</span>
+              <button class="compare__grid-btn-cart btn btn--hide-icon">
+                В корзину
+              </button>
+              <button class="compare__grid-btn-remove btn--hide-icon">
+                Удалить
+              </button>
+            </div>
+
+            <div class="compare__grid-title">Мазурка стандарт Кормфорт+</div>
+            <div class="compare__grid-data">
+              <ul class="compare__grid-list">
+                <li class="compare__gird-list-item">Natural Foam 2,5см</li>
+                <li class="compare__gird-list-item">Войлок</li>
+                <li class="compare__gird-list-item">
+                  Независимые пружины (255 пр./м2)
+                </li>
+                <li class="compare__gird-list-item">Кокос 3см (Н=21)</li>
+              </ul>
+            </div>
+            <div class="compare__grid-data">Мягкая/Жесткая</div>
+            <div class="compare__grid-data">19 см</div>
+            <div class="compare__grid-data">до 100кг</div>
+            <div class="compare__grid-data">5 зон</div>
+            <div class="compare__grid-data">Несъемный</div>
+            <div class="compare__grid-data">Есть на складе</div>
+            <div class="compare__grid-price">
+              <span> 10 031 р.</span>
+              <button class="compare__grid-btn-cart btn btn--hide-icon">
+                В корзину
+              </button>
+              <button class="compare__grid-btn-remove btn--hide-icon">
+                Удалить
+              </button>
+            </div>
+            <div class="compare__grid-title">Мазурка стандарт Кормфорт+</div>
+            <div class="compare__grid-data">
+              <ul class="compare__grid-list">
+                <li class="compare__gird-list-item">Natural Foam 2,5см</li>
+                <li class="compare__gird-list-item">Войлок</li>
+                <li class="compare__gird-list-item">
+                  Независимые пружины (255 пр./м2)
+                </li>
+                <li class="compare__gird-list-item">Кокос 3см (Н=21)</li>
+              </ul>
+            </div>
+            <div class="compare__grid-data">Мягкая/Жесткая</div>
+            <div class="compare__grid-data">19 см</div>
+            <div class="compare__grid-data">до 100кг</div>
+            <div class="compare__grid-data">5 зон</div>
+            <div class="compare__grid-data">Несъемный</div>
+            <div class="compare__grid-data">Есть на складе</div>
+            <div class="compare__grid-price">
+              <span> 10 031 р.</span>
+              <button class="compare__grid-btn-cart btn btn--hide-icon">
+                В корзину
+              </button>
+              <button class="compare__grid-btn-remove btn--hide-icon">
+                Удалить
+              </button>
+            </div>
+            <div class="compare__grid-title"></div>
+            <div class="compare__grid-data"></div>
+            <div class="compare__grid-data"></div>
+            <div class="compare__grid-data"></div>
+            <div class="compare__grid-data"></div>
+            <div class="compare__grid-data"></div>
+            <div class="compare__grid-data"></div>
+            <div class="compare__grid-data"></div>
+            <div class="compare__grid-price"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__col">
+            <img src="img/logo.webp" alt="" class="footer__img" />
+            <div class="footer__copy">
+              © 2002 - 2021 RBmatras.com <br />Все права защищены
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <span class="footer__title">Покупателям</span>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">О компании</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">Оплата</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">Доставка</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">Гарантия</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">Каталог</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <span class="footer__title">Дополнительно</span>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">Партнерская программа</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">Акции</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <div class="footer__info">
+              <div class="footer__info-head">
+                <img src="img/icon/call.svg" alt="" class="footer__info-img" />
+                <span class="footer__info-bold">Контакты</span>
+              </div>
+              <div class="footer__info-box">
+                <span class="footer__info-bold">+7 (963) 693-98-81</span>
+                <a href="tel:+79636939881" class="footer__info-link link"
+                  >Заказать звонок</a
+                >
+              </div>
+              <div class="footer__info-box">
+                <a href="mailto:recorbedding@mail.ru" class="footer__info-bold"
+                  >recorbedding@mail.ru</a
+                >
+                <span class="footer__info-text">по всем вопросам</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <div class="footer__info">
+              <div class="footer__info-head">
+                <img src="img/icon/time.svg" alt="" class="footer__info-img" />
+                <span class="footer__info-bold">График работы</span>
+              </div>
+              <div class="footer__info-box">
+                <span class="footer__info-bold">с 10:00 до 23:00</span>
+                <span class="footer__info-text">с понедельника по пятницу</span>
+              </div>
+              <div class="footer__info-box">
+                <span class="footer__info-bold">с 10:00 до 17:45</span>
+                <span class="footer__info-text">в выходные дни</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.min.js"></script>
+  </body>
+</html>
