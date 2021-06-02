@@ -66,28 +66,11 @@
     padding: 20px;
   }
 
-  &__grid-list {
-  }
-
-  &__gird-list-item {
-    padding-left: 20px;
-    position: relative;
-    color: #050e0c;
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: $green;
-    }
-
-    & + & {
-      margin-top: 8px;
+  .list {
+    &__item {
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
     }
   }
 

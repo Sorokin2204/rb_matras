@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__content">
+            <button class="header__menu-btn">
+              <div class="header__menu-btn-burger">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              Меню
+            </button>
+            <a class="header__logo" href="index.html"
+              ><img src="img/logo.webp" alt=""
+            /></a>
+            <div class="header__info">
+              <img src="img/icon/time.svg" alt="" class="header__info-img" />
+              <div class="header__info-box">
+                <span class="header__info-bold">с 10:00 до 23:00</span>
+                <span class="header__info-text">с понедельника по пятницу</span>
+              </div>
+            </div>
+
+            <div class="header__info">
+              <div class="header__info-box">
+                <span class="header__info-bold">с 10:00 до 17:45</span>
+                <span class="header__info-text">в выходные дни</span>
+              </div>
+            </div>
+
+            <div class="header__info">
+              <img src="img/icon/call.svg" alt="" class="header__info-img" />
+              <div class="header__info-box">
+                <span class="header__info-bold">+7 (963) 693-98-81</span>
+                <a href="tel:+79636939881" class="header__info-link link"
+                  >Заказать звонок</a
+                >
+              </div>
+            </div>
+
+            <div class="header__box">
+              <button class="header__btn-icon" id="search"></button>
+              <button class="header__btn-icon" id="compare"></button>
+              <button class="header__btn-icon" id="favorites"></button>
+              <a href="ordering.html" class="header__btn-icon" id="cart"></a>
+            </div>
+          </div>
+          <nav class="header__nav nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#" class="nav__link">Контакты</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">О компании</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Партнерская программа</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Гарантия</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Доставка</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Оплата</a>
+              </li>
+              <li class="nav__item"><a href="#" class="nav__link">Акции</a></li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Каталог</a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="header__nav--mobile nav--mobile">
+            <div class="nav__box">
+              <div class="nav__head">
+                <div class="nav__title">Меню</div>
+                <button class="nav__close-btn"></button>
+              </div>
+              <ul class="nav__list">
+                <li class="nav__item nav__item--submenu">
+                  <button class="nav__btn" aria-expanded="false">
+                    Каталог
+                  </button>
+                  <ul class="list" aria-hidden="true">
+                    <li class="list__item">
+                      <a href="#" class="nav__link">Матрасы</a>
+                    </li>
+                    <li class="list__item">
+                      <a href="#" class="nav__link">Наматрасники и чехлы</a>
+                    </li>
+                    <li class="list__item">
+                      <a href="#" class="nav__link"
+                        >Ортопедические подушки и одеяла</a
+                      >
+                    </li>
+                    <li class="list__item">
+                      <a href="#" class="nav__link">Ортопедические основания</a>
+                    </li>
+                    <li class="list__item">
+                      <a href="#" class="nav__link">Наполнители (материалы)</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Контакты</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">О компании</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Партнерская программа</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Гарантия</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Доставка</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Оплата</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Акции</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </header>
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="breadcrumbs__inner">
+          <span class="breadcrumbs__item">Главная</span>
+          <span class="breadcrumbs__item">Корзина покупок</span>
+          <span class="breadcrumbs__item">Офорлмение заказа</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="ordering">
+      <div class="container">
+        <div class="ordering__inner">
+          <h2 class="ordering__title-h2 title-h2">Оформление заказа</h2>
+          <div class="ordering-product">
+            <img
+              src="img/product_01.webp"
+              alt=""
+              class="ordering-product__img"
+            />
+            <div class="ordering-product__box">
+              <span class="ordering-product__title"
+                >Мазурка стандарт Кормфорт+</span
+              >
+              <select
+                class="ordering-product__select"
+                id="select_size"
+                data-name-option="Размер: "
+              >
+                <option value="80х190"></option>
+                <option value="90х190"></option>
+                <option value="120х190"></option>
+                <option value="140х190"></option>
+                <option value="160х190"></option>
+                <option value="180х190"></option>
+              </select>
+              <select
+                class="ordering-product__select"
+                data-name-option="Чехол: "
+              >
+                <option value="Хлопковый жаккард, несъемный"></option>
+                <option value="Трикотаж, несъемный"></option>
+                <option value="Трикотаж, съемный"></option>
+                <option value="Велюр брендовый, съемный"></option>
+                <option value="Чехол"></option>
+                <option value="Велюр брендовый, несъемный"></option>
+              </select>
+            </div>
+            <div class="ordering-product__price-box">
+              <span class="ordering-product__price-text">Стоимость</span>
+              <div class="ordering-product__price">25 426 р.</div>
+            </div>
+            <button class="ordering-product__btn-remove"></button>
+          </div>
+          <div class="ordering-discount">
+            <div class="ordering-discount__head">
+              <h3 class="ordering-discount__head-title">
+                Больше товаров - больше скидка!
+              </h3>
+              <p class="ordering-discount__head-text">
+                За каждую единицу товара дополнительная скидка: за 2 - 2%; за 3
+                - 3%; за 4 и более - 6%;
+              </p>
+            </div>
+
+            <ul class="ordering-discount__list">
+              <li class="ordering-discount__list-item">
+                <img
+                  src="img/product_02.webp"
+                  alt=""
+                  class="ordering-discount__img"
+                />
+                <div class="ordering-discount__content">
+                  <span class="ordering-discount__title">
+                    Подушка ортопедическая "Лебяжий пух"
+                  </span>
+                  <span class="ordering-discount__price">1 684 р.</span>
+                  <select
+                    class="ordering-discount__select"
+                    data-name-option="Размер: "
+                  >
+                    <option value="80х190"></option>
+                    <option value="90х190"></option>
+                    <option value="120х190"></option>
+                    <option value="140х190"></option>
+                    <option value="160х190"></option>
+                    <option value="180х190"></option>
+                  </select>
+                  <button class="ordering-discount__btn-add btn btn-sm">
+                    Добавить
+                  </button>
+                </div>
+              </li>
+              <li class="ordering-discount__list-item">
+                <img
+                  src="img/product_02.webp"
+                  alt=""
+                  class="ordering-discount__img"
+                />
+                <div class="ordering-discount__content">
+                  <span class="ordering-discount__title">
+                    Подушка ортопедическая "Лебяжий пух"
+                  </span>
+                  <span class="ordering-discount__price">1 684 р.</span>
+                  <select
+                    class="ordering-discount__select"
+                    data-name-option="Размер: "
+                  >
+                    <option value="80х190"></option>
+                    <option value="90х190"></option>
+                    <option value="120х190"></option>
+                    <option value="140х190"></option>
+                    <option value="160х190"></option>
+                    <option value="180х190"></option>
+                  </select>
+                  <button class="ordering-discount__btn-add btn btn-sm">
+                    Добавить
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="ordering-steps">
+            <ul class="ordering-steps__list">
+              <li class="ordering-steps__list-item">
+                <h3 class="ordering-steps__title">
+                  1. Информация о покупателе
+                </h3>
+                <div class="ordering-steps__info">
+                  <input
+                    class="ordering-steps__info-name input"
+                    placeholder="Имя*"
+                  />
+                  <input
+                    class="ordering-steps__info-tel input"
+                    placeholder="Номер телефона*"
+                  />
+                  <input
+                    class="ordering-steps__info-email input"
+                    placeholder="Email"
+                  />
+                </div>
+              </li>
+              <li class="ordering-steps__list-item">
+                <h3 class="ordering-steps__title">2. Доставка</h3>
+                <div class="ordering-steps__delivery">
+                  <input
+                    class="ordering-steps__delivery-city input"
+                    placeholder="Город*"
+                  />
+                  <input
+                    class="ordering-steps__delivery-street input"
+                    placeholder="Улица, микрорайон, жк и тд.**"
+                  />
+                  <input
+                    class="ordering-steps__delivery-building input"
+                    placeholder="Дом, строение*"
+                  />
+                  <input
+                    class="ordering-steps__delivery-apartment input"
+                    placeholder="Квартира, офис"
+                  />
+                </div>
+              </li>
+              <li class="ordering-steps__list-item">
+                <div class="ordering-steps__payment">
+                  <div class="ordering-steps__payment-type">
+                    <h3 class="ordering-steps__title">3. Оплата</h3>
+                    <div class="ordering-steps__payment-type-list">
+                      <input
+                        type="radio"
+                        name="payment_radio"
+                        id="payment_online-pay"
+                      />
+                      <label for="payment_online-pay">Онлайн оплата</label>
+                      <input
+                        type="radio"
+                        name="payment_radio"
+                        id="payment_cash"
+                      />
+                      <label for="payment_cash">Наличными при доставке</label>
+                      <input
+                        type="radio"
+                        name="payment_radio"
+                        id="payment_parts"
+                      />
+                      <label for="payment_parts">Покупка частями</label>
+                      <input
+                        type="radio"
+                        name="payment_radio"
+                        id="payment_credit"
+                      />
+                      <label for="payment_credit"
+                        >В кредит без предоплаты</label
+                      >
+                      <input
+                        type="radio"
+                        name="payment_radio"
+                        id="payment_installment"
+                      />
+                      <label for="payment_installment"
+                        >Рассрочка от Сбербанка</label
+                      >
+                    </div>
+                  </div>
+                  <div class="ordering-steps__payment-comment">
+                    <h3 class="ordering-steps__payment-comment-title">
+                      Комментарий к заказу
+                    </h3>
+
+                    <textarea
+                      class="ordering-steps__payment-comment-textarea input"
+                      placeholder="Комментарии к заказу (по желанию)"
+                      cols="30"
+                      rows="4"
+                    ></textarea>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="ordering-footer">
+            <div class="ordering-footer__promocode">
+              <input
+                type="text"
+                class="input"
+                placeholder="У меня есть промокод"
+              />
+              <button
+                class="ordering-footer__btn-apply btn btn-md btn--hide-icon"
+              >
+                Применить
+              </button>
+            </div>
+            <div class="ordering-footer__total">
+              <ul class="ordering-footer__total-list">
+                <li class="ordering-footer__total-list-item">
+                  <span>Сумма заказа:</span>25 426 р.
+                </li>
+                <li class="ordering-footer__total-list-item">
+                  <span>Доставка:</span>500 р.
+                </li>
+                <li class="ordering-footer__total-list-item">
+                  <span>Скидка:</span>0 р.
+                </li>
+                <li class="ordering-footer__total-list-item">
+                  <span>Итого:</span>25 926 р.
+                </li>
+              </ul>
+              <a href="order-accepted.html" class="ordering-footer__btn btn"
+                >Оформить заказ</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__col">
+            <img src="img/logo.webp" alt="" class="footer__img" />
+            <div class="footer__copy">
+              © 2002 - 2021 RBmatras.com <br />Все права защищены
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <span class="footer__title">Покупателям</span>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">О компании</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">Оплата</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">Доставка</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">Гарантия</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">Каталог</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <span class="footer__title">Дополнительно</span>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">Партнерская программа</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__list-link">Акции</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <div class="footer__info">
+              <div class="footer__info-head">
+                <img src="img/icon/call.svg" alt="" class="footer__info-img" />
+                <span class="footer__info-bold">Контакты</span>
+              </div>
+              <div class="footer__info-box">
+                <span class="footer__info-bold">+7 (963) 693-98-81</span>
+                <a href="tel:+79636939881" class="footer__info-link link"
+                  >Заказать звонок</a
+                >
+              </div>
+              <div class="footer__info-box">
+                <a href="mailto:recorbedding@mail.ru" class="footer__info-bold"
+                  >recorbedding@mail.ru</a
+                >
+                <span class="footer__info-text">по всем вопросам</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <div class="footer__info">
+              <div class="footer__info-head">
+                <img src="img/icon/time.svg" alt="" class="footer__info-img" />
+                <span class="footer__info-bold">График работы</span>
+              </div>
+              <div class="footer__info-box">
+                <span class="footer__info-bold">с 10:00 до 23:00</span>
+                <span class="footer__info-text">с понедельника по пятницу</span>
+              </div>
+              <div class="footer__info-box">
+                <span class="footer__info-bold">с 10:00 до 17:45</span>
+                <span class="footer__info-text">в выходные дни</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.min.js"></script>
+  </body>
+</html>

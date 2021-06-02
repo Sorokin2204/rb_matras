@@ -100,7 +100,14 @@ function css() {
 ///JS
 function js() {
   return src(path.src.js)
-    .pipe(order(['!script*.js', 'script.js']))
+    .pipe(
+      order([
+        'choices.min.js',
+        'swiper-bundle.min.js',
+        'nouislider.min.js',
+        'script.js',
+      ]),
+    )
     .pipe(concat('script.js'))
     .pipe(
       rename({

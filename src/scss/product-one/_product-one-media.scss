@@ -13,10 +13,10 @@
 
     &__tabs-item {
       &:last-child {
-        button {
-          padding: 0 13px;
-        }
-        flex: 0;
+        // button {
+        //   padding: 0 13px;
+        // }
+        // flex: 0;
       }
     }
 
@@ -33,7 +33,7 @@
     }
 
     &__tabs-btn {
-      padding: 0 13px;
+      //padding: 0 13px;
     }
 
     &__cart-btn {
@@ -48,12 +48,12 @@
     }
   }
 
-  .product-similar {
-    &__container {
-      margin-right: -20px;
-      margin-left: -20px;
-    }
-  }
+  // .product-similar {
+  //   &__container {
+  //     margin-right: -20px;
+  //     margin-left: -20px;
+  //   }
+  // }
 }
 
 @media (max-width: 1060px) {
@@ -89,6 +89,10 @@
     .choices::after {
       right: 20px !important;
     }
+
+    .choices__list--dropdown {
+      top: 57px !important;
+    }
   }
   .product-similar {
     .swiper-slide {
@@ -106,6 +110,14 @@
     .choices::after {
       right: 8px !important;
     }
+
+    &__head {
+      grid-template-columns: auto;
+    }
+
+    &__btn-diff {
+      justify-self: start;
+    }
   }
 
   .product-similar {
@@ -120,6 +132,12 @@
 
     &__inner {
       padding: 40px 0px;
+    }
+
+    .product {
+      &:first-child {
+        margin-left: 0px;
+      }
     }
   }
 
@@ -140,14 +158,21 @@
       margin-bottom: 30px;
     }
 
-    &__title {
+    &__test-btn {
+      span {
+        display: inline-block;
+      }
+    }
+
+    &__head {
+      flex-wrap: wrap;
       margin-bottom: 10px;
     }
 
     &__tabs-item {
-      &:last-child {
-        flex: 1;
-      }
+      // &:last-child {
+      //   flex: 1;
+      // }
     }
   }
 
@@ -158,12 +183,7 @@
   }
 }
 
-@media (max-width: 380px) {
-  .product-one {
-  }
-}
-
-@media (max-width: 380px) {
+@media (max-width: 465px) {
   .product-one {
     &__info {
       flex-wrap: wrap;
@@ -178,6 +198,20 @@
       flex-basis: 100%;
       border-radius: 10px;
       margin-top: 15px;
+      margin-right: 0;
+    }
+    &__test-btn {
+      order: 4;
+      flex-basis: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+      span {
+        display: inline-block;
+      }
+    }
+
+    &__info-price {
+      @include medium-26;
     }
 
     &__favorites-btn {
@@ -193,8 +227,12 @@
       min-height: 140px;
     }
 
-    &__tabs-btn {
-      padding: 0 6px;
+    .swiper-button-next-product-similar,
+    .swiper-button-next-product-similar {
+      display: none !important;
     }
   }
+}
+
+@media (max-width: 360px) {
 }
