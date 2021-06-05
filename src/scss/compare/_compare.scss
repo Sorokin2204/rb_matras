@@ -1,6 +1,11 @@
 .compare {
+  margin-top: 20px;
+  border-top: 1px solid #dfdfdf;
   &__inner {
     padding: 30px 0px;
+  }
+
+  &__container {
   }
 
   &__title {
@@ -9,12 +14,16 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: auto 240px 240px 240px 240px;
+
+    grid-template-columns: 168px repeat(4, 240px);
     grid-template-rows: repeat(9, auto);
     grid-auto-flow: column;
     grid-gap: 1px;
     border: 1px solid #eeeeee;
     border-radius: 10px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     div {
       &:first-child {
         border-top-left-radius: 10px;
@@ -34,12 +43,44 @@
     }
   }
 
+  &__grid-mask {
+    position: relative;
+  }
+
+  &__grid-mask-blur {
+    pointer-events: none;
+    z-index: 1;
+    opacity: 1;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 87px;
+    height: 100%;
+    background: linear-gradient(
+      91.2deg,
+      rgba(255, 255, 255, 0) 0.95%,
+      rgba(255, 255, 255, 0.81) 55.12%,
+      rgba(255, 255, 255, 0.9) 98.16%
+    );
+    mix-blend-mode: normal;
+    transition: all 0.2s;
+    &--disabled {
+      transition: all 0.2s;
+      opacity: 0;
+    }
+  }
+
   &__grid-prop {
     @include medium-15;
     color: $gray;
     padding: 10px 20px;
     &:first-child {
       padding: 30px 20px;
+    }
+
+    &:nth-child(9) {
+      padding-top: 30px;
     }
   }
 
@@ -64,6 +105,13 @@
     @include regular-15;
     color: $black;
     padding: 20px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+  }
+
+  &__grid-list {
+    align-self: flex-start;
   }
 
   .list {
@@ -126,5 +174,68 @@
       background-color: #afafaf;
     }
     margin-top: 20px;
+  }
+
+  &__scroll {
+    margin-top: 20px;
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__scroll-progress-bar-container {
+    width: 160px;
+    height: 3px;
+    background-color: $brown-light;
+    border-radius: 5px;
+  }
+
+  &__scroll-progress-bar {
+    width: 0%;
+    height: 3px;
+    background-color: $green;
+    border-radius: 5px;
+  }
+
+  &__scroll-btn {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    background-color: $green-light;
+    border-radius: 50%;
+    transition: all 0.2s;
+    &::after {
+      transition: all 0.2s;
+      content: '';
+      display: block;
+      position: absolute;
+      -webkit-mask-image: url(../../img/icon/chevron-right-3.svg);
+      mask-image: url(../../img/icon/chevron-right-3.svg);
+      background-color: $green;
+      width: 8px;
+      height: 14px;
+      top: 50%;
+      left: 48%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--disabled {
+      pointer-events: none;
+      transition: all 0.2s;
+      background-color: #f9f4f5;
+      &::after {
+        transition: all 0.2s;
+        background-color: $gray;
+      }
+    }
+  }
+  &__scroll-btn-left {
+    margin: 0 25px;
+  }
+
+  &__scroll-btn-right {
+    &::after {
+      transform: translate(-20%, -50%) rotate(180deg);
+    }
   }
 }

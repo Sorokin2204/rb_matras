@@ -50,6 +50,10 @@ $screen-max: 1440;
   @include fluid-type(500, 11, 13, $screen-min, $screen-max);
 }
 
+@mixin medium-12 {
+  @include fluid-type(500, 12, 14, $screen-min, $screen-max);
+}
+
 @mixin medium-13 {
   @include fluid-type(500, 13, 15, $screen-min, $screen-max);
 }

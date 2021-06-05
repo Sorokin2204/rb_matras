@@ -631,57 +631,194 @@ switch (pathName) {
       });
     }
     break;
-  case '/ordering.html': {
-    const orderingProductInit = () => {
-      const elemets = document.querySelectorAll('.ordering-product__select');
+  case '/ordering.html':
+    {
+      const orderingProductInit = () => {
+        const elemets = document.querySelectorAll('.ordering-product__select');
 
-      elemets.forEach((element) => {
-        new Choices(element, {
-          searchEnabled: false,
+        elemets.forEach((element) => {
+          new Choices(element, {
+            searchEnabled: false,
+          });
         });
-      });
-    };
+      };
 
-    const orderingDiscountInit = () => {
-      const elemets = document.querySelectorAll('.ordering-discount__select');
+      const orderingDiscountInit = () => {
+        const elemets = document.querySelectorAll('.ordering-discount__select');
 
-      elemets.forEach((element) => {
-        new Choices(element, {
-          searchEnabled: false,
+        elemets.forEach((element) => {
+          new Choices(element, {
+            searchEnabled: false,
+          });
         });
+      };
+
+      orderingProductInit();
+      orderingDiscountInit();
+
+      const selects = document.querySelectorAll('select');
+      selects.forEach((select) => {
+        if (select.hasAttribute('data-name-option')) {
+          nameSelect = select.getAttribute('data-name-option');
+          choiceSelect = select.nextSibling;
+          choiceSelect.setAttribute('data-name-option', nameSelect);
+        }
       });
-    };
 
-    orderingProductInit();
-    orderingDiscountInit();
+      ///DISABLE SELECT
+      const selectSize = document.getElementById('select_size');
+      //const selectChehol = selectSize.nextSibling;
 
-    const selects = document.querySelectorAll('select');
-    selects.forEach((select) => {
-      if (select.hasAttribute('data-name-option')) {
-        nameSelect = select.getAttribute('data-name-option');
-        choiceSelect = select.nextSibling;
-        choiceSelect.setAttribute('data-name-option', nameSelect);
+      const choices = document.querySelectorAll('.choices');
+      choices[1].classList.add('is-disabled');
+      choices[1].style.pointerEvents = 'none';
+      selectSize.addEventListener('change', () => {
+        choices[1].classList.remove('is-disabled');
+        choices[1].style.pointerEvents = 'auto';
+      });
+    }
+    break;
+  case '/compare.html':
+    {
+      let emptyCellCount = document.querySelectorAll(
+        '.compare__grid-title--empty',
+      ).length;
+      const grid = document.querySelector('.compare__grid');
+      const emptyCells = document.querySelectorAll(
+        '.compare__grid-cell--empty',
+      );
+      const scrollBtnRight = document.querySelector(
+        '.compare__scroll-btn-right',
+      );
+      const scrollBtnLeft = document.querySelector('.compare__scroll-btn-left');
+      const gridMask = document.querySelector('.compare__grid-mask-blur');
+      let progressBar = document.querySelector('.compare__scroll-progress-bar');
+      const scroll = document.querySelector('.compare__scroll');
+
+      var DesktopCompareMedia = window.matchMedia('(max-width: 1260px)');
+      var TwoProductCompareMedia = window.matchMedia('(max-width: 692px)');
+      var ThreeProductCompareMedia = window.matchMedia('(max-width: 931px)');
+      var FoutProductCompareMedia = window.matchMedia('(max-width: 1173px)');
+      let quantityProductCompare;
+      switch (emptyCellCount) {
+        case 0:
+          {
+            quantityProductCompare = function fourProductCompare() {
+              if (FoutProductCompareMedia.matches) {
+                grid.style.overflow = 'scroll';
+                gridMask.style.display = 'block';
+                scroll.style.display = 'flex';
+              } else {
+                grid.style.overflow = 'scroll';
+                scroll.style.display = 'none';
+                gridMask.style.display = 'none';
+              }
+            };
+          }
+          break;
+
+        case 1:
+          {
+            quantityProductCompare = function threeProductCompare() {
+              if (DesktopCompareMedia.matches) {
+                grid.style.overflow = 'hidden';
+              }
+              if (ThreeProductCompareMedia.matches) {
+                emptyCells.forEach((cell) => (cell.style.display = 'none'));
+                scroll.style.display = 'flex';
+                grid.style.overflow = 'scroll';
+                gridMask.style.display = 'block';
+              } else {
+                emptyCells.forEach((cell) => (cell.style.display = 'block'));
+                scroll.style.display = 'none';
+                grid.style.overflow = 'hidden';
+                gridMask.style.display = 'none';
+              }
+            };
+          }
+          break;
+        case 2:
+          {
+            quantityProductCompare = function twoProductCompare() {
+              if (DesktopCompareMedia.matches) {
+                grid.style.overflow = 'hidden';
+              }
+
+              if (TwoProductCompareMedia.matches) {
+                emptyCells.forEach((cell) => (cell.style.display = 'none'));
+                scroll.style.display = 'flex';
+                grid.style.overflow = 'scroll';
+                gridMask.style.display = 'block';
+              } else {
+                emptyCells.forEach((cell) => (cell.style.display = 'block'));
+                scroll.style.display = 'none';
+                grid.style.overflow = 'hidden';
+                gridMask.style.display = 'none';
+              }
+            };
+          }
+          break;
+        default:
+          break;
       }
-    });
 
-    ///DISABLE SELECT
-    const selectSize = document.getElementById('select_size');
-    //const selectChehol = selectSize.nextSibling;
+      quantityProductCompare();
+      window.addEventListener('resize', quantityProductCompare);
 
-    const choices = document.querySelectorAll('.choices');
-    choices[1].classList.add('is-disabled');
-    choices[1].style.pointerEvents = 'none';
-    selectSize.addEventListener('change', () => {
-      choices[1].classList.remove('is-disabled');
-      choices[1].style.pointerEvents = 'auto';
-    });
-  }
+      scrollBtnLeft.addEventListener('click', (e) => {
+        scrollBtnLeft.style.pointerEvents = 'none';
+        scrollBtnRight.style.pointerEvents = 'none';
+        sideScroll(grid, 'left', 20, 500, 15);
+      });
+      scrollBtnRight.addEventListener('click', (e) => {
+        scrollBtnLeft.style.pointerEvents = 'none';
+        scrollBtnRight.style.pointerEvents = 'none';
+        sideScroll(grid, 'right', 20, 500, 15);
+      });
+
+      grid.addEventListener('scroll', (event) => {
+        let scrolled =
+          (grid.scrollLeft / (grid.scrollWidth - grid.clientWidth)) * 100;
+        progressBar.style.width = scrolled + '%';
+        if (scrolled == 0) {
+          scrollBtnLeft.classList.add('compare__scroll-btn--disabled');
+        } else {
+          scrollBtnLeft.classList.remove('compare__scroll-btn--disabled');
+        }
+
+        if (scrolled == 100) {
+          scrollBtnRight.classList.add('compare__scroll-btn--disabled');
+          gridMask.classList.add('compare__grid-mask-blur--disabled');
+        } else {
+          scrollBtnRight.classList.remove('compare__scroll-btn--disabled');
+          gridMask.classList.remove('compare__grid-mask-blur--disabled');
+        }
+      });
+
+      function sideScroll(element, direction, speed, distance, step) {
+        scrollAmount = 0;
+        var slideTimer = setInterval(function () {
+          if (direction == 'left') {
+            element.scrollLeft -= step;
+          } else {
+            element.scrollLeft += step;
+          }
+          scrollAmount += step;
+          if (scrollAmount >= distance) {
+            scrollBtnLeft.style.pointerEvents = 'auto';
+            scrollBtnRight.style.pointerEvents = 'auto';
+            window.clearInterval(slideTimer);
+          }
+        }, speed);
+      }
+    }
+    break;
+
   default:
     break;
 }
 
 ///MODALS
-console.log(pathName);
 const btns = document.querySelectorAll('.btn');
 const modalOverlay = document.querySelector('.modal-overlay ');
 const modals = document.querySelectorAll('.modal');
