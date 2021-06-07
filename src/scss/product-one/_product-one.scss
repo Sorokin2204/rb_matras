@@ -67,7 +67,7 @@
   }
 
   &__text {
-    @include regular-15-resize;
+    @include regular-15-resize-11;
     margin-bottom: 30px;
     color: #000;
   }
@@ -180,7 +180,7 @@
 
   .list {
     &__item {
-      @include regular-15-resize;
+      @include regular-15-resize-11;
       span {
         color: #505654;
       }
@@ -191,7 +191,7 @@
   }
 
   .choices__inner {
-    @include medium-13-resize;
+    @include medium-13-resize-12;
     background-color: transparent;
     padding: 20px 30px !important;
     border: 1px solid $green-light;

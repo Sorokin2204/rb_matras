@@ -16,7 +16,7 @@ $grid-gap: 30px;
 // $regular-12: 400 12px / 15px $font-family;
 // $regular-13: 400 13px / 15px $font-family;
 // $regular-15: 400 15px / 18px $font-family;
-// $regular-20: 400 20px / 18px $font-family;
+// $regular-20-resize-17: 400 20px / 18px $font-family;
 
 // $medium-13: 500 13px / 15px $font-family;
 // $medium-15: 500 15px / 18px $font-family;
@@ -39,11 +39,15 @@ $screen-max: 1440;
 @mixin regular-15 {
   @include fluid-type(400, 15, 18, $screen-min, $screen-max);
 }
-@mixin regular-15-resize {
+@mixin regular-15-resize-11 {
   @include fluid-type(400, 15, 18, $screen-min, $screen-max, 11, 13);
 }
-@mixin regular-20 {
+@mixin regular-20-resize-17 {
   @include fluid-type(400, 20, 24, $screen-min, $screen-max, 17, 18);
+}
+
+@mixin regular-20 {
+  @include fluid-type(400, 20, 24, $screen-min, $screen-max);
 }
 
 @mixin medium-11 {
@@ -57,7 +61,7 @@ $screen-max: 1440;
 @mixin medium-13 {
   @include fluid-type(500, 13, 15, $screen-min, $screen-max);
 }
-@mixin medium-13-resize {
+@mixin medium-13-resize-12 {
   @include fluid-type(500, 13, 15, $screen-min, $screen-max, 12, 14);
 }
 @mixin medium-15 {
