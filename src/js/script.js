@@ -496,6 +496,7 @@ menuCloseBtn.addEventListener('click', () => {
 
 overlay.addEventListener('click', () => {
   DisableMenu();
+  DisableMiniCart();
 });
 
 function DisableMenu() {
@@ -509,6 +510,43 @@ function ActiveMenu() {
   menu.classList.add('nav--active');
   overlay.classList.add('overlay--active');
   menuOpenBtn.classList.add('header__menu-btn--active');
+  document.body.style.overflow = 'hidden';
+}
+
+///MINI CART
+
+let miniCart = document.querySelector('.mini-cart');
+let miniCartCloseBtn = document.querySelector('.mini-cart__head-btn-close');
+let miniCartContinueBtn = document.querySelector('.mini-cart__btn-continue');
+let miniCartOpenBtn = document.getElementById('cart');
+
+miniCartOpenBtn.addEventListener('click', () => {
+  if (miniCart.classList.contains('mini-cart--active')) {
+    DisableMiniCart();
+  } else {
+    ActiveMiniCart();
+  }
+});
+
+miniCartCloseBtn.addEventListener('click', () => {
+  DisableMiniCart();
+});
+miniCartContinueBtn.addEventListener('click', () => {
+  DisableMiniCart();
+});
+
+function DisableMiniCart() {
+  miniCartOpenBtn.classList.remove('header__btn-icon--active');
+  miniCart.classList.remove('mini-cart--active');
+  overlay.classList.remove('overlay--active');
+  document.body.style.overflow = 'auto';
+}
+
+function ActiveMiniCart() {
+  miniCartOpenBtn.classList.add('header__btn-icon--active');
+  miniCart.classList.add('mini-cart--active');
+  if (!window.matchMedia('(max-width: 769px)').matches)
+    overlay.classList.add('overlay--active');
   document.body.style.overflow = 'hidden';
 }
 

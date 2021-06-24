@@ -245,7 +245,7 @@ a {
 }
 
 .title-h2 {
-  @include medium-26;
+  @include medium-26-resize-20;
   text-align: center;
 }
 
@@ -407,12 +407,14 @@ input::-webkit-inner-spin-button {
 }
 
 .breadcrumbs {
+  //border-bottom: 1px solid #dfdfdf;
   &__inner {
     @include regular-12;
     display: flex;
     justify-content: flex-start;
     color: $gray;
     margin-top: -10px;
+    // padding-bottom: 30px;
   }
 
   &__item {
@@ -466,7 +468,7 @@ input::-webkit-inner-spin-button {
   border-radius: 15px;
   padding: 45px 30px;
   display: none;
-
+  margin: 20px;
   &__title {
     @include medium-17;
     color: $black;
@@ -491,7 +493,7 @@ input::-webkit-inner-spin-button {
 
 .modal-test {
   &__text {
-    @include regular-15;
+    @include regular-15-resize-12;
     margin-bottom: 20px;
   }
 
@@ -529,7 +531,7 @@ input::-webkit-inner-spin-button {
   }
 
   &__text {
-    @include regular-15;
+    @include regular-15-resize-12;
     max-width: 390px;
     margin-bottom: 30px;
     color: $black;
@@ -604,7 +606,7 @@ input::-webkit-inner-spin-button {
   }
 
   &__product-list-item {
-    @include regular-15;
+    @include regular-15-resize-11;
     color: $black;
     & + & {
       margin-top: 5px;
@@ -633,7 +635,8 @@ input::-webkit-inner-spin-button {
     }
   }
 
-  &__btn-continue {
+  &__btn-continue,
+  &__btn-ordering {
     text-align: center;
   }
 
@@ -767,6 +770,7 @@ input::-webkit-inner-spin-button {
 .header {
   position: relative;
   &__inner {
+    position: relative;
     padding: 30px 0;
   }
 
@@ -874,7 +878,7 @@ input::-webkit-inner-spin-button {
     height: 22px;
     background-color: $black;
     transition: all 0.2s ease-out;
-    &:hover {
+    &--active {
       transition: all 0.2s ease-out;
       background-color: #28be9a;
     }

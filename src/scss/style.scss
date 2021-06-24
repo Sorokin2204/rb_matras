@@ -24,4 +24,25 @@
 @import 'order-accepted/order-accepted';
 @import 'order-accepted/order-accepted-media';
 
+@import 'favorites/favorites.scss';
+@import 'favorites/favorites-media.scss';
+
+@import 'modals/modals';
+@import 'modals/modals-media';
+
+@import 'mini-cart/mini-cart';
+@import 'mini-cart/mini-cart-media';
+
+@import 'delivery/delivery';
+@import 'delivery/delivery-media';
+
+@import 'contact/contact';
+@import 'contact/contact-media';
+
+@import 'about-us/about-us.scss';
+@import 'about-us/about-us-media.scss';
+
+@import 'need-help/need-help.scss';
+@import 'need-help/need-help-media.scss';
+
 @import 'media';

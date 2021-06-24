@@ -1,7 +1,12 @@
 @media (max-width: 1174px) {
   .ordering {
+    margin-top: 20px;
     &__inner {
       padding: 40px 0;
+    }
+
+    &__title-h2 {
+      margin-bottom: 20px;
     }
   }
   .ordering-product {
@@ -127,6 +132,15 @@
 }
 
 @media (max-width: 769px) {
+  .ordering {
+    &__inner {
+      padding-top: 20px;
+    }
+
+    .choices__list--dropdown {
+      top: 54px !important;
+    }
+  }
   .ordering-product {
     margin-bottom: 0;
     align-items: center;
