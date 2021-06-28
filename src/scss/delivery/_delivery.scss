@@ -1,14 +1,4 @@
 .delivery {
-  margin-top: 30px;
-  border-top: 1px solid #dfdfdf;
-  &__inner {
-    padding: 30px 0 60px;
-  }
-
-  &__title-h2 {
-    margin-bottom: 30px;
-  }
-
   &__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

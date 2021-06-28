@@ -99,25 +99,27 @@ function css() {
 }
 ///JS
 function js() {
-  return src(path.src.js)
-    .pipe(
-      order([
-        'choices.min.js',
-        'swiper-bundle.min.js',
-        'nouislider.min.js',
-        'script.js',
-      ]),
-    )
-    .pipe(concat('script.js'))
-    .pipe(
-      rename({
-        suffix: '.min',
-        extname: '.js',
-      }),
-    )
-    .pipe(uglify())
-    .pipe(dest(path.build.js))
-    .pipe(browserSync.stream());
+  return (
+    src(path.src.js)
+      .pipe(
+        order([
+          'choices.min.js',
+          'swiper-bundle.min.js',
+          'nouislider.min.js',
+          'script.js',
+        ]),
+      )
+      .pipe(concat('script.js'))
+      .pipe(
+        rename({
+          suffix: '.min',
+          extname: '.js',
+        }),
+      )
+      // .pipe(uglify())
+      .pipe(dest(path.build.js))
+      .pipe(browserSync.stream())
+  );
 }
 
 function img() {

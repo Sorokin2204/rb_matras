@@ -242,78 +242,87 @@ if (heightrangeSlider) {
 // } else {
 // }
 
-///TABS
+function createTab(className) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelector(`.${className}__tabs`);
+    const tabsBtn = document.querySelectorAll(`.${className}__tabs-btn`);
+    const tabsContent = document.querySelectorAll(
+      `.${className}__tabs-content`,
+    );
 
-document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelector('.product-one__tabs');
-  const tabsBtn = document.querySelectorAll('.product-one__tabs-btn');
-  const tabsContent = document.querySelectorAll('.product-one__tabs-content');
+    if (tabs) {
+      tabs.addEventListener(`click`, (e) => {
+        if (e.target.classList.contains(`${className}__tabs-btn`)) {
+          const tabsPath = e.target.dataset.tabsPath;
+          tabsBtn.forEach((el) => {
+            el.classList.remove(`${className}__tabs-btn--active`);
+          });
+          document
+            .querySelector(`[data-tabs-path="${tabsPath}"]`)
+            .classList.add(`${className}__tabs-btn--active`);
+          tabsHandler(tabsPath);
+        }
 
-  if (tabs) {
-    tabs.addEventListener('click', (e) => {
-      if (e.target.classList.contains('product-one__tabs-btn')) {
-        const tabsPath = e.target.dataset.tabsPath;
-        tabsBtn.forEach((el) => {
-          el.classList.remove('product-one__tabs-btn--active');
-        });
-        document
-          .querySelector(`[data-tabs-path="${tabsPath}"]`)
-          .classList.add('product-one__tabs-btn--active');
-        tabsHandler(tabsPath);
-      }
-
-      if (e.target.classList.contains('product-one__tabs-arrow--prev')) {
-        let activeBtn = document.querySelector(
-          '.product-one__tabs-btn--active',
-        );
-        let activeParent = activeBtn.closest('.product-one__tabs-item');
-        let previousParent = activeParent.previousElementSibling;
-
-        if (previousParent) {
-          let prevActive = previousParent.querySelector(
-            '.product-one__tabs-btn',
+        if (e.target.classList.contains(`${className}__tabs-arrow--prev`)) {
+          let activeBtn = document.querySelector(
+            `.${className}__tabs-btn--active`,
           );
-          tabsBtn.forEach((el) => {
-            el.classList.remove('product-one__tabs-btn--active');
-          });
-          prevActive.classList.add('product-one__tabs-btn--active');
+          let activeParent = activeBtn.closest(`.${className}__tabs-item`);
+          let previousParent = activeParent.previousElementSibling;
 
-          let path = prevActive.dataset.tabsPath;
-          tabsHandler(path);
+          if (previousParent) {
+            let prevActive = previousParent.querySelector(
+              `.${className}__tabs-btn`,
+            );
+            tabsBtn.forEach((el) => {
+              el.classList.remove(`${className}__tabs-btn--active`);
+            });
+            prevActive.classList.add(`${className}__tabs-btn--active`);
+
+            let path = prevActive.dataset.tabsPath;
+            tabsHandler(path);
+          }
         }
-      }
 
-      if (e.target.classList.contains('product-one__tabs-arrow--next')) {
-        let activeBtn = document.querySelector(
-          '.product-one__tabs-btn--active',
-        );
-        let activeParent = activeBtn.closest('.product-one__tabs-item');
-        let nextParent = activeParent.nextElementSibling;
+        if (e.target.classList.contains(`${className}__tabs-arrow--next`)) {
+          let activeBtn = document.querySelector(
+            `.${className}__tabs-btn--active`,
+          );
+          let activeParent = activeBtn.closest(`.${className}__tabs-item`);
+          let nextParent = activeParent.nextElementSibling;
 
-        if (nextParent) {
-          let nextActive = nextParent.querySelector('.product-one__tabs-btn');
-          tabsBtn.forEach((el) => {
-            el.classList.remove('product-one__tabs-btn--active');
-          });
-          nextActive.classList.add('product-one__tabs-btn--active');
+          if (nextParent) {
+            let nextActive = nextParent.querySelector(
+              `.${className}__tabs-btn`,
+            );
+            tabsBtn.forEach((el) => {
+              el.classList.remove(`${className}__tabs-btn--active`);
+            });
+            nextActive.classList.add(`${className}__tabs-btn--active`);
 
-          let path = nextActive.dataset.tabsPath;
-          tabsHandler(path);
+            let path = nextActive.dataset.tabsPath;
+            tabsHandler(path);
+          }
         }
-      }
-    });
-  }
+      });
+    }
+    const tabsHandler = (path) => {
+      tabsContent.forEach((el) => {
+        el.classList.remove(`${className}__tabs-content--active`);
+      });
+      document
+        .querySelector(`[data-tabs-target="${path}"]`)
+        .classList.add(`${className}__tabs-content--active`);
+    };
+  });
+}
 
-  const tabsHandler = (path) => {
-    tabsContent.forEach((el) => {
-      el.classList.remove('product-one__tabs-content--active');
-    });
-    document
-      .querySelector(`[data-tabs-target="${path}"]`)
-      .classList.add('product-one__tabs-content--active');
-  };
-});
+createTab('product-one');
+createTab('test');
 
+///TABS PRODUCT
+
+///TABS TEST
 ///CUSTOM SELECT
 const productSelectInit = () => {
   const elemets = document.querySelectorAll('.product-one__select');
@@ -904,3 +913,71 @@ btnsClose.forEach((btnClose) => {
     });
   });
 });
+
+///ACCARDION
+///ACCARDION QUESTION
+///ACCORDION
+const accardion_items = document.querySelectorAll('.accardion__head');
+
+function toggleAccordionItem() {
+  const itemToggle = this.getAttribute('aria-expanded');
+  let itemContent = this.nextSibling;
+  let content = this.nextSibling;
+  //   for (i = 0; i < items.length; i++) {
+  //     let content = items[i].nextSibling;
+  //     items[i].setAttribute('aria-expanded', 'false');
+  //     items[i].nextSibling.setAttribute('aria-hidden', 'true');
+  //     content.style.maxHeight = 0 + 'px';
+  //   }
+
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+    itemContent.setAttribute('aria-hidden', 'false');
+    itemContent.style.maxHeight = content.scrollHeight + 'px';
+  } else {
+    this.setAttribute('aria-expanded', 'false');
+    itemContent.setAttribute('aria-hidden', 'true');
+    content.style.maxHeight = 0 + 'px';
+  }
+}
+
+accardion_items.forEach((accardion_item) =>
+  accardion_item.addEventListener('click', toggleAccordionItem),
+);
+// toggleAccordionItem();
+///ACCARDION SUB ITEM
+const sub_accardion_items = document.querySelectorAll('.sub-accardion__head');
+
+function toggleSubAccordionItem() {
+  const itemToggle = this.getAttribute('aria-expanded');
+  let itemContent = this.nextSibling;
+  let content = this.nextSibling;
+  let parentContent = this.closest('.accardion .accardion__content');
+  let subAccardionContent = this.closest('.sub-accardion');
+
+  //console.log(itemContent);
+  //   for (i = 0; i < items.length; i++) {
+  //     let content = items[i].nextSibling;
+  //     items[i].setAttribute('aria-expanded', 'false');
+  //     items[i].nextSibling.setAttribute('aria-hidden', 'true');
+  //     content.style.maxHeight = 0 + 'px';
+  //   }
+
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+    itemContent.setAttribute('aria-hidden', 'false');
+    itemContent.style.maxHeight = content.scrollHeight + 'px';
+
+    parentContent.style.maxHeight =
+      parentContent.scrollHeight + subAccardionContent.scrollHeight + 'px';
+  } else {
+    this.setAttribute('aria-expanded', 'false');
+    itemContent.setAttribute('aria-hidden', 'true');
+    // parentContent.style.maxHeight = parentContent.scrollHeight + 'px';
+    content.style.maxHeight = 0 + 'px';
+  }
+}
+
+sub_accardion_items.forEach((accardion_item) =>
+  accardion_item.addEventListener('click', toggleSubAccordionItem),
+);

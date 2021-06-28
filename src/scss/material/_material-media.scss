@@ -1,0 +1,36 @@
+@media (max-width: 1030px) {
+  .material {
+    &__img {
+      width: 100%;
+    }
+    &__content {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
+    &__text {
+      margin-bottom: 20px;
+    }
+  }
+}
+@media (max-width: 634px) {
+  .material {
+    &__img {
+    }
+
+    &__content {
+      grid-gap: 25px;
+    }
+    &__text {
+      margin-bottom: 30px;
+    }
+
+    &__accardion-list-img {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    &__accardion-list-item {
+      flex-direction: column;
+    }
+  }
+}

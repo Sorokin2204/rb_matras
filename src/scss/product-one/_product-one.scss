@@ -89,7 +89,7 @@
   }
 
   &__tabs-btn {
-    @include medium-15-resize;
+    @include medium-15-resize-11;
     color: #505654;
     width: 100%;
     white-space: nowrap;
@@ -108,7 +108,6 @@
 
     &--active {
       color: $green;
-
       &::after {
         background-color: $green;
       }

@@ -71,8 +71,12 @@ $screen-max: 1440;
   @include fluid-type(500, 15, 18, $screen-min, $screen-max);
 }
 
-@mixin medium-15-resize {
+@mixin medium-15-resize-11 {
   @include fluid-type(500, 15, 18, $screen-min, $screen-max, 11, 13);
+}
+
+@mixin medium-15-resize-12 {
+  @include fluid-type(500, 15, 18, $screen-min, $screen-max, 12, 14);
 }
 
 @mixin medium-17 {

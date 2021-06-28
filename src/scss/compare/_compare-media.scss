@@ -14,14 +14,6 @@
 
 @media (max-width: 465px) {
   .compare {
-    &__inner {
-      padding: 20px 0 40px;
-    }
-
-    &__title {
-      margin-bottom: 20px;
-    }
-
     &__grid {
       border: 1px solid #dfdfdf;
       grid-template-columns: 126px repeat(4, 205px);

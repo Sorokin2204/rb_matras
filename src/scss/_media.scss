@@ -138,6 +138,18 @@
   }
 }
 
+@media (max-width: 1030px) {
+  .inner {
+    padding: 20px 0 40px;
+  }
+  .breadcrumbs {
+    padding-bottom: 20px;
+  }
+  .title-h2 {
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 769px) {
   .header {
     &__content {
@@ -224,6 +236,22 @@
 
       div + div {
         margin-top: 3px;
+      }
+    }
+  }
+
+  .accardion {
+    &__head {
+      padding: 25px 15px 0 15px;
+      &::after {
+        margin-right: 2px;
+      }
+    }
+    &__item {
+    }
+    &__content {
+      padding: 0px 15px 25px 15px;
+      &[aria-hidden='false'] {
       }
     }
   }
