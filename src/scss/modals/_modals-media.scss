@@ -14,6 +14,46 @@
     padding: 30px 20px;
     margin: 20px;
   }
+
+  .modal-material {
+    border-radius: 0 !important;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 !important;
+    background-color: #fefefe;
+    overflow-y: scroll;
+    height: 100vh;
+    max-height: 100vh !important;
+    height: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s !important;
+
+    &__text {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    &.modal--visible {
+      transform: translateX(0%);
+      transition: transform 0.3s !important;
+    }
+
+    .modal__head {
+      padding: 20px 20px 0 20px;
+    }
+
+    &__accardion-item {
+      border-radius: 0 !important;
+    }
+    &__accardion {
+      border-radius: 0 !important;
+      border-left: none;
+      border-right: none;
+      border-bottom: 0;
+    }
+  }
 }
 
 @media (max-width: 500px) {

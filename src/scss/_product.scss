@@ -5,7 +5,6 @@
   box-shadow: $shadow;
   border-radius: 10px;
   padding: 35px 25px;
-
   min-height: 373px;
   max-height: 397px;
   min-width: 230px;
@@ -15,16 +14,75 @@
     margin-bottom: 20px;
   }
 
+  &--sale {
+    .product__btn-icon-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      align-self: stretch;
+    }
+
+    .product__sale {
+      visibility: visible;
+    }
+
+    .product__sale-price {
+      visibility: visible;
+    }
+    .product__price {
+      @include medium-17-resize-15;
+    }
+  }
+
+  &--empty {
+    .product__btn-icon-box,
+    .product__title,
+    .product__list,
+    .product__img-box,
+    .product__box {
+      position: relative;
+      z-index: 1;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 10 !important;
+        animation: shimmer 2s infinite linear;
+        background: linear-gradient(
+          to right,
+          #eff1f3 4%,
+          #e2e2e2 25%,
+          #eff1f3 36%
+        );
+        background-size: 1000px 100%;
+        z-index: 10;
+      }
+    }
+
+    .product__img {
+      visibility: hidden;
+    }
+  }
+
   &__btn-icon-compare {
     -webkit-mask-image: url(../img/icon/compare.svg);
     mask-image: url(../img/icon/compare.svg);
-    width: 22px;
-    height: 22px;
+    mask-size: cover;
+    width: 18px;
+    height: 18px;
     background-color: $black;
-    transition: all 0.2s ease-out;
-    &:hover {
-      transition: all 0.2s ease-out;
-      background-color: #28be9a;
+    &--active {
+      background-color: transparent;
+      -webkit-mask-image: none;
+      mask-image: none;
+      background-image: url(../img/icon/compare-fill.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     margin-right: 18px;
@@ -33,20 +91,28 @@
   &__btn-icon-favorites {
     -webkit-mask-image: url(../img/icon/heart.svg);
     mask-image: url(../img/icon/heart.svg);
-    width: 24px;
-    height: 22px;
+    mask-size: cover;
+    width: 20px;
+    height: 18px;
     background-color: $black;
-    transition: all 0.2s ease-out;
-    &:hover {
-      transition: all 0.2s ease-out;
-      background-color: #28be9a;
+    &--active {
+      background-color: $green;
+      -webkit-mask-image: url(../img/icon/heart-fill.svg);
+      mask-image: url(../img/icon/heart-fill.svg);
     }
   }
 
   &__img {
-    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+    height: auto;
+
     max-width: 211px;
     max-height: 128px;
+  }
+
+  &__img-box {
+    margin-bottom: 15px;
   }
 
   &__title {
@@ -73,13 +139,26 @@
   }
 
   &__sale {
+    visibility: hidden;
     display: block;
-    @include medium-11;
+    @include medium-15-resize-11;
     background: #6ec0ac;
     border-radius: 5px;
-    padding: 6px 15px;
+    padding: 5px 25px;
     color: $white;
-    display: none;
+    margin-right: auto;
+  }
+
+  &__price-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btn-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
   }
 
   &__box {
@@ -89,6 +168,25 @@
     color: #000;
   }
 
+  &__sale-price {
+    visibility: hidden;
+    @include regular-11;
+    color: $gray;
+    margin-bottom: 3px;
+    position: relative;
+    text-decoration: line-through;
+    // &::after {
+    //   content: '';
+    //   display: block;
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 1px;
+    //   background-color: $gray;
+    // }
+  }
+
   &__price {
     @include medium-20-resize-15;
     white-space: nowrap;
@@ -96,7 +194,6 @@
 
   &__btn-cart {
     white-space: nowrap;
-    margin-left: 13px;
   }
   ///SWIPER
   .swiper-slide {
@@ -106,7 +203,15 @@
 
 .product-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(230px, 261px));
+  // grid-template-columns: repeat(3, minmax(230px, 261px));
+  grid-template-columns: repeat(3, auto);
   grid-gap: 20px;
   //grid-auto-rows: 387px;
+  &--full {
+    grid-template-columns: repeat(4, minmax(230px, 261px));
+    grid-gap: 30px;
+    .product {
+      padding: 30px 25px;
+    }
+  }
 }

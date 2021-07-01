@@ -56,6 +56,11 @@ function browsersync() {
 function html() {
   return src([path.src.html])
     .pipe(
+      include({
+        prefix: '@@',
+      }),
+    )
+    .pipe(
       htmlmin({
         collapseWhitespace: true,
       }),

@@ -45,6 +45,11 @@ $screen-max: 1440;
 @mixin regular-15-resize-12 {
   @include fluid-type(400, 15, 18, $screen-min, $screen-max, 12, 14);
 }
+
+@mixin regular-20-resize-15 {
+  @include fluid-type(400, 20, 24, $screen-min, $screen-max, 15, 18);
+}
+
 @mixin regular-20-resize-17 {
   @include fluid-type(400, 20, 24, $screen-min, $screen-max, 17, 18);
 }
@@ -109,7 +114,13 @@ $screen-max: 1440;
 @mixin medium-26-resize-17 {
   @include fluid-type(500, 26, 24, 769, $screen-max, 17, 20);
 }
+@mixin bold-40 {
+  @include fluid-type(700, 40, 47, $screen-min, $screen-max);
+}
 
+@mixin bold-40-resize-20 {
+  @include fluid-type(700, 40, 47, $screen-min, $screen-max, 20, 24);
+}
 @mixin bold-60 {
   @include fluid-type(700, 60, 71, $screen-min, $screen-max, 20, 24);
 }
@@ -160,5 +171,28 @@ $screen-max: 1440;
   @media (min-width: #{$screen-max}px) {
     font-size: #{$font-max}px;
     line-height: #{$line-height-max}px;
+  }
+}
+
+@mixin fluid-value(
+  $name-prop,
+  $prop-max,
+  $prop-min,
+  $screen-max-loc: '',
+  $screen-min-loc: ''
+) {
+  @if $screen-min-loc == '' {
+    $screen-min-loc: $screen-min;
+  }
+  @if $screen-max-loc == '' {
+    $screen-max-loc: $screen-max;
+  }
+  #{$name-prop}: calc(
+    #{$prop-min}px + #{($prop-max - $prop-min)} * (100vw - #{$screen-min-loc}px) /
+      (#{$screen-max-loc} - #{$screen-min-loc})
+  );
+
+  @media (min-width: #{$screen-max}px) {
+    #{$name-prop}: #{$prop-max}px;
   }
 }

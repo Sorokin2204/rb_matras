@@ -261,6 +261,19 @@
   }
 }
 
+@media (max-width: 634px) {
+  .accardion-list {
+    &__img {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    &__item {
+      flex-direction: column !important;
+    }
+  }
+}
+
 @media (max-width: 560px) {
   .header {
     &__box {
