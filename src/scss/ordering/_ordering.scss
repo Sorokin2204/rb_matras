@@ -14,7 +14,7 @@
   }
 
   .choices__list--dropdown {
-    background-color: #fff;
+    background-color: $white;
     border: 1px solid #ddd;
     top: 100%;
     margin-top: -1px;
@@ -83,12 +83,13 @@
   .is-disabled::after {
     display: none !important;
   }
-
+  .choices__list--dropdown .choices__list {
+    padding: 15px 20px;
+  }
   .choices__list--dropdown {
     border: 1.5px solid $green-light;
     top: 130%;
     border-radius: 10px;
-    padding: 15px 20px;
   }
 
   .choices__item--choice {
@@ -101,7 +102,7 @@
   }
 }
 .ordering-product {
-  background: #ffffff;
+  background: $white;
   border: 1px solid #f9f4f5;
   box-shadow: $shadow;
   border-radius: 10px;
@@ -193,7 +194,7 @@
 }
 .ordering-discount {
   padding: 35px 30px;
-  background-color: #fff;
+  background-color: $white;
   border: 1px solid #f9f4f5;
   box-shadow: $shadow;
   border-radius: 10px;
@@ -292,7 +293,7 @@
 }
 
 .ordering-steps {
-  background-color: #fff;
+  background-color: $white;
   border: 1px solid #f9f4f5;
   box-shadow: $shadow;
   border-radius: 10px;
@@ -378,7 +379,7 @@
     margin-bottom: 30px;
   }
 
-  &__payment-comment-textarea {
+  &__payment-comment-textarea textarea {
     box-sizing: border-box;
     width: 100%;
     resize: none;
@@ -394,7 +395,14 @@
     }
   }
 
-  label {
+  input[type='text'],
+  input[type='email'] {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+  }
+
+  label:not([class]) {
     @include regular-13;
     cursor: pointer;
     display: inline-block;

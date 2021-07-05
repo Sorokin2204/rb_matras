@@ -92,7 +92,12 @@
                     rows="3"
                     placeholder="Ваш вопрос или сообщение*"
                   ></textarea>
-                  <button class="contact__item-btn btn">Отправить</button>
+                  <button
+                    class="contact__item-btn btn"
+                    data-path="modal-test-thanks"
+                  >
+                    Отправить
+                  </button>
                 </form>
               </div>
             </li>
@@ -102,5 +107,9 @@
     </div>
   </div>
 </section>
+
+<div class="modals">
+  <div class="modal-overlay">@@include('parts/modals/_test-thanks.html/')</div>
+</div>
 
 @@include('parts/_footer.html')

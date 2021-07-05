@@ -6,7 +6,7 @@
   bottom: 0;
   right: 0;
   background: rgba(5, 14, 12, 0.5);
-  z-index: 100;
+  z-index: 11;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -149,7 +149,7 @@
     border-radius: 15px;
     border: 1px solid #dfdfdf;
     padding: 0px 15px;
-    background: #fefefe;
+    background: $white;
     margin-right: 15px;
     align-self: stretch;
   }

@@ -1,6 +1,8 @@
 .mini-cart {
+  max-height: calc(100vh - 195px);
+  overflow: scroll;
   position: absolute;
-  top: calc(100% - 20px);
+  top: calc(100% - 28px);
   right: 0;
   background-color: $white;
   z-index: 10;
@@ -15,6 +17,7 @@
     transform: translateY(0%) !important;
   }
   &__inner {
+    max-height: calc(100vh - 104px);
   }
 
   &__head {
@@ -53,7 +56,7 @@
     border-radius: 15px;
     border: 1px solid $green-light;
     padding: 25px 10px;
-    background: #fefefe;
+    background: $white;
     margin-right: 15px;
     align-self: stretch;
   }

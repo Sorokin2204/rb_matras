@@ -128,39 +128,96 @@
           <li class="ordering-steps__list-item">
             <h3 class="ordering-steps__title">1. Информация о покупателе</h3>
             <div class="ordering-steps__info">
-              <input
-                class="ordering-steps__info-name input"
-                placeholder="Имя*"
-              />
-              <input
-                class="ordering-steps__info-tel input"
-                placeholder="Номер телефона*"
-              />
-              <input
-                class="ordering-steps__info-email input"
-                placeholder="Email"
-              />
+              <div class="ordering-steps__info-name input-box">
+                <input
+                  type="text"
+                  class="input"
+                  placeholder="Имя*"
+                  name="info-name"
+                  required
+                />
+                <label for="info-name" class="input-label">Имя*</label>
+                <span>Обязательное поле</span>
+              </div>
+              <div class="ordering-steps__info-tel input-box">
+                <input
+                  type="text"
+                  class="input"
+                  placeholder="Номер телефона*"
+                  name="info-tel"
+                  required
+                />
+                <label for="info-tel" class="input-label"
+                  >Номер телефона*</label
+                >
+                <span>Обязательное поле</span>
+              </div>
+              <div class="ordering-steps__info-email input-box">
+                <input
+                  type="email"
+                  class="input"
+                  placeholder="Имя*"
+                  name="info-email"
+                  required
+                />
+                <label for="info-email" class="input-label">Email</label>
+                <span>Не корректное значение</span>
+              </div>
             </div>
           </li>
           <li class="ordering-steps__list-item">
             <h3 class="ordering-steps__title">2. Доставка</h3>
             <div class="ordering-steps__delivery">
-              <input
-                class="ordering-steps__delivery-city input"
-                placeholder="Город*"
-              />
-              <input
-                class="ordering-steps__delivery-street input"
-                placeholder="Улица, микрорайон, жк и тд.**"
-              />
-              <input
-                class="ordering-steps__delivery-building input"
-                placeholder="Дом, строение*"
-              />
-              <input
-                class="ordering-steps__delivery-apartment input"
-                placeholder="Квартира, офис"
-              />
+              <div class="ordering-steps__delivery-city input-box">
+                <input
+                  type="text"
+                  class="input"
+                  placeholder="Город*"
+                  name="delivery-city"
+                  value=""
+                  onchange="this.setAttribute('value', this.value);"
+                />
+                <label for="delivery-city" class="input-label">Город</label>
+              </div>
+              <div class="ordering-steps__delivery-city input-box">
+                <input
+                  type="text"
+                  class="input"
+                  placeholder="Улица, микрорайон, жк и тд.*"
+                  name="delivery-street"
+                  value=""
+                  onchange="this.setAttribute('value', this.value);"
+                />
+                <label for="delivery-street" class="input-label"
+                  >Улица, микрорайон, жк и тд.</label
+                >
+              </div>
+              <div class="ordering-steps__delivery-city input-box">
+                <input
+                  type="text"
+                  class="input"
+                  placeholder="Дом, строение*"
+                  name="delivery-building"
+                  value=""
+                  onchange="this.setAttribute('value', this.value);"
+                />
+                <label for="delivery-building" class="input-label"
+                  >Дом, строение</label
+                >
+              </div>
+              <div class="ordering-steps__delivery-city input-box">
+                <input
+                  type="text"
+                  class="input"
+                  placeholder="Квартира, офис"
+                  name="delivery-apartment"
+                  value=""
+                  onchange="this.setAttribute('value', this.value);"
+                />
+                <label for="delivery-apartment" class="input-label"
+                  >Квартира, офис</label
+                >
+              </div>
             </div>
           </li>
           <li class="ordering-steps__list-item">
@@ -199,12 +256,19 @@
                   Комментарий к заказу
                 </h3>
 
-                <textarea
-                  class="ordering-steps__payment-comment-textarea input"
-                  placeholder="Комментарии к заказу (по желанию)"
-                  cols="30"
-                  rows="4"
-                ></textarea>
+                <div class="ordering-steps__payment-comment-textarea input-box">
+                  <textarea
+                    class="input"
+                    placeholder="Комментарии к заказу (по желанию)"
+                    cols="30"
+                    rows="4"
+                    value=""
+                    onchange="this.setAttribute('value', this.value);"
+                  ></textarea>
+                  <label for="delivery-apartment" class="input-label"
+                    >Квартира, офис</label
+                  >
+                </div>
               </div>
             </div>
           </li>
@@ -213,7 +277,21 @@
 
       <div class="ordering-footer">
         <div class="ordering-footer__promocode">
-          <input type="text" class="input" placeholder="У меня есть промокод" />
+          <div class="input-box">
+            <input
+              type="text"
+              class="input"
+              placeholder="У меня есть промокод"
+              name="delivery-apartment"
+              value=""
+              onchange="this.setAttribute('value', this.value);"
+            />
+            <label for="delivery-apartment" class="input-label"
+              >У меня есть промокод</label
+            >
+          </div>
+
+          <!-- <input type="text" class="input" placeholder="У меня есть промокод" /> -->
           <button class="ordering-footer__btn-apply btn btn-md btn--hide-icon">
             Применить
           </button>

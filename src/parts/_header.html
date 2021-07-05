@@ -49,27 +49,58 @@
             </div>
 
             <div class="header__box">
-              <button class="header__btn-icon" id="search"></button>
-              <a
-                href="../compare.html"
-                class="header__btn-icon"
-                id="compare"
-              ></a>
-              <a
-                href="../favorites.html"
-                class="header__btn-icon"
-                id="favorites"
-              ></a>
-              <button class="header__btn-icon" id="cart"></button>
+              <button class="header__btn-icon">
+                <a class="header__link-icon header__link-icon-search"></a>
+              </button>
+              <button class="header__btn-icon">
+                <a
+                  href="../compare.html"
+                  class="header__link-icon header__link-icon-compare"
+                >
+                </a>
+                <span class="header__count-icon"></span>
+              </button>
+              <button class="header__btn-icon">
+                <a
+                  href="../favorites.html"
+                  class="header__link-icon header__link-icon-favorites"
+                ></a>
+                <span class="header__count-icon"></span>
+              </button>
+              <button class="header__btn-icon">
+                <a class="header__link-icon header__link-icon-cart"></a>
+                <span class="header__count-icon"></span>
+              </button>
             </div>
           </div>
           <nav class="header__nav nav">
             <ul class="nav__list">
-              <li class="nav__item">
-                <a href="../catalog.html" class="nav__link">Каталог</a>
+              <li class="nav__item nav__item--submenu">
+                <button class="nav__btn">Каталог</button>
+                <ul class="list">
+                  <li class="list__item">
+                    <a href="../catalog.html" class="nav__link">Матрасы</a>
+                  </li>
+                  <li class="list__item">
+                    <a href="../catalog-other.html" class="nav__link"
+                      >Наматрасники и чехлы</a
+                    >
+                  </li>
+                  <li class="list__item">
+                    <a href="#" class="nav__link"
+                      >Ортопедические подушки и одеяла</a
+                    >
+                  </li>
+                  <li class="list__item">
+                    <a href="#" class="nav__link">Ортопедические основания</a>
+                  </li>
+                  <li class="list__item">
+                    <a href="#" class="nav__link">Наполнители (материалы)</a>
+                  </li>
+                </ul>
               </li>
               <li class="nav__item">
-                <a href="../promotions.html" class="nav__link">Акции</a>
+                <a href="../discount.html" class="nav__link">Акции</a>
               </li>
               <li class="nav__item">
                 <a href="../delivery.html" class="nav__link">Доставка</a>
@@ -88,9 +119,7 @@
                 <a href="../test.html" class="nav__link">Тестировать</a>
               </li>
               <li class="nav__item">
-                <a href="../test.html" class="nav__link"
-                  >Партнерская программа</a
-                >
+                <a href="../material.html" class="nav__link">Материалы</a>
               </li>
             </ul>
           </nav>
@@ -148,9 +177,12 @@
                 <button class="mini-cart__btn-continue">
                   Продолжить покупки
                 </button>
-                <button class="mini-cart__btn-ordering btn btn--hide-icon">
+                <a
+                  href="ordering.html"
+                  class="mini-cart__btn-ordering btn btn--hide-icon"
+                >
                   Оформить заказ
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -168,10 +200,12 @@
               <button class="nav__btn" aria-expanded="false">Каталог</button>
               <ul class="list" aria-hidden="true">
                 <li class="list__item">
-                  <a href="#" class="nav__link">Матрасы</a>
+                  <a href="../catalog.html" class="nav__link">Матрасы</a>
                 </li>
                 <li class="list__item">
-                  <a href="#" class="nav__link">Наматрасники и чехлы</a>
+                  <a href="../catalog-other.html" class="nav__link"
+                    >Наматрасники и чехлы</a
+                  >
                 </li>
                 <li class="list__item">
                   <a href="#" class="nav__link"
@@ -187,25 +221,26 @@
               </ul>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">Контакты</a>
+              <a href="../discount.html" class="nav__link">Акции</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">О компании</a>
+              <a href="../delivery.html" class="nav__link">Доставка</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">Партнерская программа</a>
+              <a href="../guarantee.html" class="nav__link">Гарантия</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">Гарантия</a>
+              <a href="../about-us.html" class="nav__link">О компании</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">Доставка</a>
+              <a href="../contact.html" class="nav__link">Контакты</a>
+            </li>
+
+            <li class="nav__item">
+              <a href="../test.html" class="nav__link">Тестировать</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">Оплата</a>
-            </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">Акции</a>
+              <a href="../material.html" class="nav__link">Материалы</a>
             </li>
           </ul>
         </div>

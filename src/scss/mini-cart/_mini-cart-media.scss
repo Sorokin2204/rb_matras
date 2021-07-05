@@ -1,7 +1,9 @@
-@media (max-width: 1030px) {
+@media (max-width: 1060px) {
   .mini-cart {
+    top: calc(100% - 20px);
     overflow: scroll;
     width: 450px;
+    max-height: calc(100vh - 135px);
     &__head {
       padding: 20px;
     }
@@ -32,6 +34,8 @@
 
 @media (max-width: 769px) {
   .mini-cart {
+    overflow: auto;
+    max-height: none;
     margin-left: -20px;
     height: calc(100vh - 130px);
     right: auto;

@@ -17,7 +17,7 @@
                 <span class="banner__item-subtitle"
                   >Акция действует до 15 апреля</span
                 >
-                <a href="#" class="banner__item-btn btn btn-lg"
+                <a href="discount.html" class="banner__item-btn btn btn-lg"
                   >Смотреть подробнее</a
                 >
               </div>
@@ -36,7 +36,7 @@
                 <span class="banner__item-subtitle"
                   >Акция действует до 15 апреля</span
                 >
-                <a href="#" class="banner__item-btn btn btn-lg"
+                <a href="discount.html" class="banner__item-btn btn btn-lg"
                   >Смотреть подробнее</a
                 >
               </div>
@@ -55,7 +55,7 @@
                 <span class="banner__item-subtitle"
                   >Акция действует до 15 апреля</span
                 >
-                <a href="#" class="banner__item-btn btn btn-lg"
+                <a href="discount.html" class="banner__item-btn btn btn-lg"
                   >Смотреть подробнее</a
                 >
               </div>
@@ -80,14 +80,14 @@
             class="category__item swiper-slide"
             style="background-image: url(img/category_01.webp)"
           >
-            <a href="#" class="category__btn btn btn-md">Матрасы</a>
+            <a href="catalog.html" class="category__btn btn btn-md">Матрасы</a>
           </div>
 
           <div
             class="category__item swiper-slide"
             style="background-image: url(img/category_02.webp)"
           >
-            <a href="#" class="category__btn btn btn-md"
+            <a href="catalog.html" class="category__btn btn btn-md"
               >Наматрасники и чехлы</a
             >
           </div>
@@ -95,7 +95,7 @@
             class="category__item swiper-slide"
             style="background-image: url(img/category_03.webp)"
           >
-            <a href="#" class="category__btn btn btn-md"
+            <a href="catalog.html" class="category__btn btn btn-md"
               >Ортопедические <br />
               подушки и одеяла</a
             >
@@ -104,7 +104,7 @@
             class="category__item swiper-slide"
             style="background-image: url(img/category_04.webp)"
           >
-            <a href="#" class="category__btn btn btn-md"
+            <a href="catalog.html" class="category__btn btn btn-md"
               >Ортопедические основания</a
             >
           </div>
@@ -112,7 +112,7 @@
             class="category__item swiper-slide"
             style="background-image: url(img/category_05.webp)"
           >
-            <a href="#" class="category__btn btn btn-md"
+            <a href="catalog.html" class="category__btn btn btn-md"
               >Наполнители (материалы)</a
             >
           </div>
@@ -134,4 +134,9 @@
   <div class="modal-overlay">@@include('parts/modals/_add-cart.html/')</div>
 </div>
 
-@@include('parts/_catalog.html') @@include('parts/_footer.html')
+<div class="catalog-footer">
+  <div class="catalog__overlay"></div>
+  <section class="catalog">@@include('parts/_catalog.html')</section>
+
+  @@include('parts/_footer.html')
+</div>

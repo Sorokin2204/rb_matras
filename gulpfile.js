@@ -111,6 +111,9 @@ function js() {
           'choices.min.js',
           'swiper-bundle.min.js',
           'nouislider.min.js',
+          'custom-nouislider.js',
+          'custom-swiper.js',
+          'custom-choices.js',
           'script.js',
         ]),
       )

@@ -9,16 +9,15 @@
   </div>
 </div>
 
-<section class="favorites">
-  <div class="container">
-    <div class="favorites__inner inner">
-      <h2 class="favorites__title-h2 title-h2">Избранное</h2>
-      <div class="favorites__product-list product-list product-list--full">
-        @@include('parts/_product.html') @@include('parts/_product.html')
-        @@include('parts/_product.html') @@include('parts/_product.html')
-      </div>
-    </div>
-  </div>
-</section>
+<div class="modals">
+  <div class="modal-overlay">@@include('parts/modals/_add-cart.html/')</div>
+</div>
 
-@@include('parts/_footer.html')
+<div class="catalog-footer">
+  <div class="catalog__overlay"></div>
+  <section class="catalog catalog--disable-filter catalog--disable-sort">
+    @@include('parts/_catalog.html')
+  </section>
+
+  @@include('parts/_footer.html')
+</div>

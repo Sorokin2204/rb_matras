@@ -5,12 +5,18 @@
 @import 'swiper-bundle';
 @import 'nouislider';
 @import 'choices.min';
-@import 'product';
-@import 'product-media';
 @import 'global';
+@import 'product/product';
+@import 'product/product-media';
 
 @import 'home/home';
 @import 'home/home-media';
+
+@import 'footer/footer';
+@import 'footer/footer-media';
+
+@import 'header/header';
+@import 'header/header-media';
 
 @import 'product-one/product-one';
 @import 'product-one/product-one-media';

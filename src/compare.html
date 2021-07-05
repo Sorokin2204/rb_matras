@@ -54,7 +54,10 @@
           <div class="compare__grid-data">Есть на складе</div>
           <div class="compare__grid-price">
             <span> 10 031 р.</span>
-            <button class="compare__grid-btn-cart btn btn--hide-icon">
+            <button
+              class="compare__grid-btn-cart btn btn--hide-icon"
+              data-path="modal-add-cart"
+            >
               В корзину
             </button>
             <button class="compare__grid-btn-remove btn--hide-icon">
@@ -79,14 +82,44 @@
           <div class="compare__grid-data">Есть на складе</div>
           <div class="compare__grid-price">
             <span> 10 031 р.</span>
-            <button class="compare__grid-btn-cart btn btn--hide-icon">
+            <button
+              class="compare__grid-btn-cart btn btn--hide-icon"
+              data-path="modal-add-cart"
+            >
               В корзину
             </button>
             <button class="compare__grid-btn-remove btn--hide-icon">
               Удалить
             </button>
           </div>
-          <div
+          <div class="compare__grid-title">Мазурка стандарт Кормфорт+</div>
+          <div class="compare__grid-data">
+            <ul class="compare__grid-list list">
+              <li class="list__item">Natural Foam 2,5см</li>
+              <li class="list__item">Войлок</li>
+              <li class="list__item">Независимые пружины (255 пр./м2)</li>
+              <li class="list__item">Кокос 3см (Н=21)</li>
+            </ul>
+          </div>
+          <div class="compare__grid-data">Мягкая/Жесткая</div>
+          <div class="compare__grid-data">19 см</div>
+          <div class="compare__grid-data">до 100кг</div>
+          <div class="compare__grid-data">5 зон</div>
+          <div class="compare__grid-data">Несъемный</div>
+          <div class="compare__grid-data">Есть на складе</div>
+          <div class="compare__grid-price">
+            <span> 10 031 р.</span>
+            <button
+              class="compare__grid-btn-cart btn btn--hide-icon"
+              data-path="modal-add-cart"
+            >
+              В корзину
+            </button>
+            <button class="compare__grid-btn-remove btn--hide-icon">
+              Удалить
+            </button>
+          </div>
+          <!-- <div
             class="
               compare__grid-title
               compare__grid-title--empty
@@ -100,22 +133,34 @@
           <div class="compare__grid-data compare__grid-cell--empty"></div>
           <div class="compare__grid-data compare__grid-cell--empty"></div>
           <div class="compare__grid-data compare__grid-cell--empty"></div>
-          <div class="compare__grid-price compare__grid-cell--empty"></div>
-          <div
-            class="
-              compare__grid-title
-              compare__grid-title--empty
-              compare__grid-cell--empty
-            "
-          ></div>
-          <div class="compare__grid-data compare__grid-cell--empty"></div>
-          <div class="compare__grid-data compare__grid-cell--empty"></div>
-          <div class="compare__grid-data compare__grid-cell--empty"></div>
-          <div class="compare__grid-data compare__grid-cell--empty"></div>
-          <div class="compare__grid-data compare__grid-cell--empty"></div>
-          <div class="compare__grid-data compare__grid-cell--empty"></div>
-          <div class="compare__grid-data compare__grid-cell--empty"></div>
-          <div class="compare__grid-price compare__grid-cell--empty"></div>
+          <div class="compare__grid-price compare__grid-cell--empty"></div> -->
+          <div class="compare__grid-title">Мазурка стандарт Кормфорт+</div>
+          <div class="compare__grid-data">
+            <ul class="compare__grid-list list">
+              <li class="list__item">Natural Foam 2,5см</li>
+              <li class="list__item">Войлок</li>
+              <li class="list__item">Независимые пружины (255 пр./м2)</li>
+              <li class="list__item">Кокос 3см (Н=21)</li>
+            </ul>
+          </div>
+          <div class="compare__grid-data">Мягкая/Жесткая</div>
+          <div class="compare__grid-data">19 см</div>
+          <div class="compare__grid-data">до 100кг</div>
+          <div class="compare__grid-data">5 зон</div>
+          <div class="compare__grid-data">Несъемный</div>
+          <div class="compare__grid-data">Есть на складе</div>
+          <div class="compare__grid-price">
+            <span> 10 031 р.</span>
+            <button
+              class="compare__grid-btn-cart btn btn--hide-icon"
+              data-path="modal-add-cart"
+            >
+              В корзину
+            </button>
+            <button class="compare__grid-btn-remove btn--hide-icon">
+              Удалить
+            </button>
+          </div>
         </div>
       </div>
 
@@ -135,4 +180,9 @@
     </div>
   </div>
 </section>
+
+<div class="modals">
+  <div class="modal-overlay">@@include('parts/modals/_add-cart.html/')</div>
+</div>
+
 @@include('parts/_footer.html')

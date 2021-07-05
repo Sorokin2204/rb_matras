@@ -21,7 +21,9 @@
       <div class="product-one__content">
         <div class="product-one__head">
           <h2 class="product-one__title">Мазурка стандарт Кормфорт+</h2>
-          <button class="product-one__btn-diff">В чем отличие?</button>
+          <button class="product-one__btn-diff" data-path="modal-material">
+            В чем отличие?
+          </button>
         </div>
         <p class="product-one__text">
           Серия матрасов &laquo;Мазурка стандарт&raquo; подходит как для
@@ -121,8 +123,12 @@
               <ul class="product-one__list list">
                 <li class="list__item">
                   <span>Жёсткость:</span> Мягкая/Жесткая
-                  <button data-path="modal-material">
-                    <span class="info"></span>
+                  <button>
+                    <span class="info">
+                      <div class="info-popup">
+                        Жесткость матраса с первой и второй стороны
+                      </div></span
+                    >
                   </button>
                 </li>
                 <li class="list__item"><span>Вес:</span> до 100кг</li>
@@ -167,7 +173,10 @@
         "
       >
         <div class="product-similar__wrapper product-list swiper-wrapper">
-          <div class="product swiper-slide">
+          @@include('parts/_product.html') @@include('parts/_product.html')
+          @@include('parts/_product.html') @@include('parts/_product.html')
+          @@include('parts/_product.html') @@include('parts/_product.html')
+          <!-- <div class="product swiper-slide">
             <div class="product__btn-icon-box">
               <div class="product__sale">30%</div>
               <button class="product__btn-icon-compare"></button>
@@ -334,7 +343,7 @@
               <span class="product__price">14 960 р.</span>
               <button class="product__btn-cart btn btn-sm">В корзину</button>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="swiper-button-next swiper-button-next-product-similar"></div>

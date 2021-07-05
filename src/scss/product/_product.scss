@@ -9,9 +9,28 @@
   max-height: 397px;
   min-width: 230px;
   max-width: 261px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease-out;
   &__btn-icon-box {
     align-self: flex-end;
     margin-bottom: 20px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transition: all 0.3s ease-out;
+      border: 1px solid #28be9a;
+      box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.08);
+      .product__title {
+        transition: all 0.3s ease-out;
+        color: $green;
+
+        &::before {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
   }
 
   &--sale {
@@ -77,14 +96,26 @@
     height: 18px;
     background-color: $black;
     &--active {
+      transition: none;
       background-color: transparent;
       -webkit-mask-image: none;
       mask-image: none;
       background-image: url(../img/icon/compare-fill.svg);
       background-repeat: no-repeat;
       background-size: cover;
+      @media (hover: hover) {
+        &:hover {
+          transition: none !important;
+          background-color: transparent !important;
+        }
+      }
     }
-
+    @media (hover: hover) {
+      &:hover {
+        transition: background-color 0.2s ease-out;
+        background-color: #28be9a;
+      }
+    }
     margin-right: 18px;
   }
 
@@ -95,10 +126,24 @@
     width: 20px;
     height: 18px;
     background-color: $black;
+    transition: none;
     &--active {
+      transition: none;
       background-color: $green;
       -webkit-mask-image: url(../img/icon/heart-fill.svg);
       mask-image: url(../img/icon/heart-fill.svg);
+      @media (hover: hover) {
+        &:hover {
+          transition: none !important;
+          background-color: $green !important;
+        }
+      }
+    }
+    @media (hover: hover) {
+      &:hover {
+        transition: background-color 0.2s ease-in;
+        background-color: #28be9a;
+      }
     }
   }
 
@@ -117,7 +162,24 @@
 
   &__title {
     @include medium-15;
+    color: $black;
     margin-bottom: 10px;
+    align-self: start;
+    transition: all 0.4s ease-out;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      bottom: 2px;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      height: 1px;
+      width: 100%;
+      background-color: $green;
+      transition: all 0.3s ease-out;
+    }
   }
 
   &__list {
@@ -194,6 +256,54 @@
 
   &__btn-cart {
     white-space: nowrap;
+    &--in-cart {
+      @include regular-15;
+      color: $black;
+      box-shadow: none;
+      background-color: transparent;
+      padding: 0;
+      margin-left: 23px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      // position: relative;
+      // padding-right: 12px;
+      // padding-left: 22px;
+      transition: none;
+      &::after {
+        transition: none;
+        content: '';
+        background-color: $black;
+        display: inline-block;
+        height: 1px;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        // bottom: 10px;
+        // left: 23px;
+        // width: 73px;
+      }
+      &::before {
+        transition: none;
+        content: '';
+        display: block;
+        position: absolute;
+        background-image: url(../../img/icon/buy-accept.svg);
+        background-size: cover;
+        width: 18px;
+        height: 18px;
+        top: 50%;
+        left: -23px;
+        transform: translateY(-50%);
+      }
+      @media (hover: hover) {
+        &:hover {
+          transition: none;
+          background-color: transparent;
+          filter: none;
+        }
+      }
+    }
   }
   ///SWIPER
   .swiper-slide {

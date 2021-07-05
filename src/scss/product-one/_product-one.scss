@@ -1,8 +1,5 @@
 .product-one {
-  border-top: 1px solid #dfdfdf;
-
   border-bottom: 1px solid #dfdfdf;
-  margin-top: 30px;
   &__inner {
     padding: 60px 0;
     display: flex;
@@ -28,7 +25,7 @@
     border: 1px solid #dfdfdf;
     padding: 0px 30px;
 
-    background: #fefefe;
+    background: $white;
     margin-right: 30px;
     align-self: stretch;
   }
@@ -193,7 +190,7 @@
     @include medium-13-resize-12;
     background-color: transparent;
     padding: 20px 30px !important;
-    border: 1px solid $green-light;
+    //border: 1px solid $green-light;
     border-radius: 10px !important;
     border: 1px solid $green;
   }
@@ -203,12 +200,14 @@
   }
 
   .choices__list--dropdown {
-    background-color: #fff;
+    background-color: $white;
     border: 1px solid #ddd;
     top: 100%;
     margin-top: -1px;
     border: 1px solid $green-light !important;
     border-radius: 10px !important;
+    &.is-active {
+    }
   }
 
   .choices::after {
@@ -232,7 +231,6 @@
 
   .is-focused .choices__inner,
   .is-open .choices__inner {
-    border-color: green-light !important;
   }
 
   .is-disabled .choices__inner {
@@ -249,7 +247,8 @@
 
   .choices__list--dropdown .choices__item--selectable.is-highlighted {
     background: #efefef;
-    //border: 1px solid transparent !important;
+    border-radius: 5px;
+    border: 1px solid #efefef !important;
   }
 
   .choices {
@@ -259,11 +258,15 @@
         // opacity: 1;
 
         .choices__list {
-          max-height: none;
-          display: inline-flex;
-          flex-wrap: wrap;
+          //max-height: none;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(88px, 88px));
+          align-items: center;
+          justify-content: center;
+          //flex-wrap: wrap;
           grid-column-gap: 22px;
           grid-row-gap: 10px;
+          padding: 15px 10px;
 
           .choices__item {
             align-self: flex-start;
@@ -280,6 +283,9 @@
           }
         }
       }
+
+      .choices__list {
+      }
     }
 
     .choices__item {
@@ -291,16 +297,19 @@
   .choices__list--dropdown {
     border: 1px solid $green-light;
     border-radius: 10px;
-    padding: 15px 10px;
+
     top: 67px !important;
-    transition: opacity 0.3s;
+    //transition: opacity 0.3s;
     z-index: 10000;
-    opacity: 0;
+    // opacity: 0;
+    .choices__list {
+      padding: 15px 20px;
+    }
   }
 
   .is-open .is-active {
     //visibility: visible !important;
-    opacity: 1 !important;
+    //  opacity: 1 !important;
 
     //  will-change: max-height;
   }

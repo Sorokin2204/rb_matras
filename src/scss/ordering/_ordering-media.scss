@@ -102,7 +102,7 @@
       }
     }
 
-    label {
+    label:not([class]) {
       padding: 11px 20px;
       margin-right: 10px;
     }
@@ -334,13 +334,13 @@
     }
 
     &__payment-type-list {
-      display: flex;
+      display: grid;
       flex-direction: column;
       flex-wrap: nowrap;
-      grid-template: 15px;
       grid-gap: 15px;
     }
-    label {
+
+    label:not([class]) {
       margin: 0;
     }
   }
